@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-poc-payment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: db-poc-payment
+  template:
+    metadata:
+      labels:
+        app: db-poc-payment
+    spec:
+      containers:
+        - name: db-poc-payment
+          image: #TO Be updated#
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /actuator/health # Spring Boot Actuator health endpoint
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /actuator/health # Spring Boot Actuator health endpoint
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5

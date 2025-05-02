@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PaymentPayload",
+  "type": "object",
+  "required": [
+    "transactionID",
+    "payerName",
+    "payerBank",
+    "payerCountryCode",
+    "payerAccount",
+    "payeeName",
+    "payeeBank",
+    "payeeCountryCode",
+    "payeeAccount",
+    "executionDate",
+    "amount",
+    "currency",
+    "creationTimestamp"
+  ],
+  "properties": {
+    "transactionID": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID format transaction ID"
+    },
+    "payerName": {
+      "type": "string",
+      "description": "Payer's full name"
+    },
+    "payerBank": {
+      "type": "string",
+      "description": "Name of payer's bank"
+    },
+    "payerCountryCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "description": "ISO alpha-3 country code"
+    },
+    "payerAccount": {
+      "type": "string",
+      "description": "Payer's account number"
+    },
+    "payeeName": {
+      "type": "string",
+      "description": "Payee's full name"
+    },
+    "payeeBank": {
+      "type": "string",
+      "description": "Name of payee's bank"
+    },
+    "payeeCountryCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "description": "ISO alpha-3 country code"
+    },
+    "payeeAccount": {
+      "type": "string",
+      "description": "Payee's account number"
+    },
+    "paymentInstruction": {
+      "type": "string",
+      "description": "Free text instruction for the payment"
+    },
+    "executionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Execution date in ISO 8601 format (YYYY-MM-DD)"
+    },
+    "amount": {
+      "type": "number",
+      "multipleOf": 0.01,
+      "description": "Amount with two decimal places"
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "description": "ISO 4217 currency code"
+    },
+    "creationTimestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC timestamp (YYYY-MM-DDThh:mm:ssZ)"
+    }
+  },
+  "additionalProperties": false
+}

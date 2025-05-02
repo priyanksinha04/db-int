@@ -1,0 +1,10 @@
+@Import(MySpecificComponent.class)
+
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public MySpecificComponent mySpecificComponent() {
+        return new MySpecificComponent();
+    }
+}
