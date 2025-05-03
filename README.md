@@ -17,14 +17,14 @@ Two distinct solutions are implemented to demonstrate different integration stra
 
 **Solution 1: Messaging via JSON (PPS <-> BS)**
 
-* Communication between the **PPS** and the **BS** is based on **asynchronous messaging** using **JSON** as the data format.
-* Communication between the **BS** and the **FCS** is based on **asynchronous messaging** using **XML** as the data format.
+* Communication between the **PPS** and the **BS** is based on **synchronous messaging** using **JSON** as the data format.
+* Communication between the **BS** and the **FCS** is based on **synchronous messaging** using **XML** as the data format.
 * Internal communication within each system (PPS, BS, FCS) preferably utilizes **messaging**.
 
 **Solution 2: REST APIs via JSON (PPS <-> BS)**
 
 * Communication between the **PPS** and the **BS** is based on **synchronous RESTful APIs** using **JSON** for request and response bodies.
-* Communication between the **BS** and the **FCS** remains based on **asynchronous messaging** using **XML** as the data format.
+* Communication between the **BS** and the **FCS** remains based on **synchronous messaging** using **XML** as the data format.
 * Internal communication within each system (PPS, BS, FCS) preferably utilizes **messaging**.
 
 ## Solution 1
